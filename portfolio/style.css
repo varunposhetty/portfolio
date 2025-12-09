@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #181b2e 0, #050608 45%, #020203 100%);
+  color: #ffffff;
+}
+
+/* Navbar */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 7vw;
+  background: rgba(5, 6, 8, 0.92);
+  backdrop-filter: blur(10px);
+}
+
+nav ul {
+  display: flex;
+  gap: 28px;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #d0d0d0;
+  transition: 0.25s;
+  font-size: 0.9rem;
+}
+
+nav ul li a:hover {
+  color: #4da3ff;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.logo span {
+  color: #4da3ff;
+}
+
+/* Hero */
+.hero {
+  min-height: 80vh;
+  padding: 70px 7vw 40px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1 1 320px;
+}
+
+.tagline {
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  color: #9fa4b8;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero h1 span {
+  color: #4da3ff;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #c3c4d0;
+  max-width: 480px;
+}
+
+.hero-buttons {
+  margin-top: 24px;
+}
+
+.btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.25s;
+}
+
+.btn.primary {
+  background: #4da3ff;
+  color: #050608;
+  font-weight: 600;
+}
+
+.btn.primary:hover {
+  background: #1b76d1;
+}
+
+/* Hero image */
+.hero-image {
+  flex: 0 0 260px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #4da3ff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Sections */
+.section {
+  padding: 50px 7vw;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #4da3ff;
+}
+
+.section p {
+  color: #d6d7e3;
+  max-width: 800px;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: rgba(18, 19, 27, 0.95);
+  border-radius: 16px;
+  padding: 18px 20px;
+  border: 1px solid rgba(93, 118, 175, 0.4);
+  transition: 0.25s;
+}
+
+.card:hover {
+  border-color: #4da3ff;
+  transform: translateY(-6px);
+}
+
+.card-meta {
+  color: #9fa4b8;
+  font-size: 0.9rem;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px 20px;
+}
+
+/* Achievements */
+#achievements ul {
+  margin-left: 20px;
+  margin-top: 5px;
+  color: #d6d7e3;
+}
+
+/* Contact */
+.contact p {
+  margin-bottom: 6px;
+}
+
+.contact a {
+  color: #4da3ff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 16px;
+  background: #050608;
+  color: #9fa4b8;
+}
+
+/* Simple fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeUp 0.7s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    padding: 12px 5vw;
+  }
+
+  nav ul {
+    gap: 14px;
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    padding-top: 60px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .section {
+    padding: 40px 5vw;
+  }
+}
