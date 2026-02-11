@@ -8,6 +8,8 @@
 </head>
 <body>
 
+  <div id="progress" aria-hidden="true"></div>
+
   <!-- Navbar -->
   <nav>
     <h2 class="logo">Varun<span>Poshetty</span></h2>
@@ -32,9 +34,9 @@
       </p>
       <div class="hero-buttons">
         <a href="#contact" class="btn primary">Hire Me</a>
-       <a href="Varun_Poshetty_Resume.pdf" class="btn outline" download>
+         <a href="resume.pdf" class="btn outline" download aria-label="Download resume (PDF)" title="Download resume (PDF)">
            Download Resume
-       </a>
+         </a>
       </div>
     </div>
 
@@ -83,10 +85,12 @@
   <section id="skills" class="section fade-in">
     <h2>Technical Skills</h2>
     <div class="skills-grid">
-      <div><strong>Front-end:</strong> HTML, CSS, React.js, Bootstrap, Responsive Design</div>
-      <div><strong>Back-end:</strong> Node.js, Express.js, Python (Flask/Django basics)</div>
-      <div><strong>Databases:</strong> MongoDB, MySQL</div>
-      <div><strong>Tools:</strong> Git, GitHub, VS Code</div>
+      <div><strong>Languages:</strong> JavaScript, Python</div>
+      <div><strong>Frontend:</strong> React.js, HTML, CSS, Bootstrap, Responsive Design</div>
+      <div><strong>Backend:</strong> Node.js, Express.js, RESTful APIs, JWT-based authentication</div>
+      <div><strong>Databases:</strong> MongoDB, MySQL, Redis</div>
+      <div><strong>Tools:</strong> Git, GitHub, Postman, Prisma ORM</div>
+      <div><strong>Concepts:</strong> Asynchronous Processing, Role-Based Access Control (RBAC), API Security, Database Schema Design</div>
       <div><strong>Soft Skills:</strong> Problem Solving, Team Collaboration, Communication, Adaptability</div>
     </div>
   </section>
@@ -97,29 +101,32 @@
 
     <div class="cards">
       <div class="card">
+        <h3>Scalable Notification Delivery System</h3>
+        <p>
+          Node.js / Express / Prisma / Redis / BullMQ
+        </p>
+        <p>
+          Engineered an asynchronous notification platform using Redis and BullMQ to support scalable background job execution. Architected a worker-based execution layer to decouple API requests from notification delivery operations, integrated retry strategies with exponential backoff, and built RESTful services with monitoring dashboards for delivery metrics.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Role-Based E-commerce Platform</h3>
+        <p>
+          MERN Stack / JWT / Stripe
+        </p>
+        <p>
+          Architected a role-based e-commerce application with protected backend endpoints. Implemented JWT-based authentication and middleware-driven authorization, integrated Stripe for secure payments, and designed scalable MongoDB schemas to optimize product and order data management.
+        </p>
+      </div>
+
+      <div class="card">
         <h3>Budget Buddy – Personal Finance Tracker</h3>
         <p>
-          Full-stack personal finance app that helps users track income, expenses,
-          and savings in one place with category-wise filters and visual analytics
-          for better budgeting decisions.
+          React.js / Node.js / Express.js / MongoDB
         </p>
-      </div>
-
-      <div class="card">
-        <h3>Local Kart – Hyperlocal Shopping App</h3>
         <p>
-          MERN-based platform connecting local stores with nearby customers.
-          Store owners can manage inventory, while users browse products, place
-          orders, and track deliveries through a simple interface.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>E-Commerce Platform with Admin Dashboard</h3>
-        <p>
-          End-to-end MERN e-commerce application with JWT authentication and
-          Stripe payments, plus an admin dashboard for managing users, products,
-          and orders.
+          Developed a full-stack personal finance tracking application to manage income, expenses, and budgets. Built modular RESTful APIs for processing financial records, applied JWT authentication and secure password hashing, and created responsive dashboards for visual analytics and monthly summaries.
         </p>
       </div>
     </div>
@@ -129,7 +136,6 @@
   <section id="achievements" class="section fade-in">
     <h2>Achievements</h2>
     <ul>
-      <li>Solved 300+ coding problems on LeetCode, CodeChef & Codeforces.</li>
       <li>Student Council Member – CMRCET (2022–2025).</li>
       <li>Student Leader – Samskruthi Foundation (2024–25).</li>
     </ul>
@@ -148,5 +154,7 @@
     <p>© 2025 Varun Poshetty. All rights reserved.</p>
   </footer>
 
+  <button id="backToTop" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
 </body>
 </html>

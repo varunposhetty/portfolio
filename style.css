@@ -10,6 +10,9 @@ body {
   color: #ffffff;
 }
 
+/* Smooth scrolling for anchor navigation */
+html { scroll-behavior: smooth; }
+
 /* Navbar */
 nav {
   position: sticky;
@@ -93,6 +96,11 @@ nav ul li a:hover {
   margin-top: 24px;
 }
 
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+}
+
 .btn {
   padding: 10px 22px;
   border-radius: 999px;
@@ -111,6 +119,23 @@ nav ul li a:hover {
 
 .btn.primary:hover {
   background: #1b76d1;
+}
+
+.btn.outline {
+  background: transparent;
+  color: #4da3ff;
+  border-color: #4da3ff;
+  font-weight: 600;
+}
+
+.btn.outline:hover {
+  background: rgba(77, 163, 255, 0.08);
+  color: #4da3ff;
+}
+
+.btn:focus {
+  outline: 3px solid rgba(77, 163, 255, 0.18);
+  outline-offset: 3px;
 }
 
 /* Hero image */
@@ -202,17 +227,21 @@ footer {
 }
 
 /* Simple fade-in animation */
+
 .fade-in {
   opacity: 0;
-  transform: translateY(16px);
-  animation: fadeUp 0.7s ease forwards;
+  transform: translateY(18px);
+  will-change: opacity, transform;
+}
+
+.fade-in.in-view {
+  animation: fadeUp var(--reveal-duration, 640ms) cubic-bezier(.2,.9,.2,1) both;
+  animation-delay: var(--reveal-delay, 0ms);
 }
 
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive Design */
@@ -237,4 +266,50 @@ footer {
   .section {
     padding: 40px 5vw;
   }
+}
+
+/* Scroll progress bar */
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, #4da3ff, #7be1ff);
+  z-index: 9999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  transition: width 120ms linear;
+}
+
+/* Back to top */
+#backToTop {
+  position: fixed;
+  right: 18px;
+  bottom: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(77,163,255,0.12);
+  color: #4da3ff;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transform: translateY(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 220ms ease, opacity 180ms ease;
+  z-index: 9999;
+}
+
+#backToTop.visible {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in.in-view { animation: none; opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
 }
